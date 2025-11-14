@@ -14,9 +14,10 @@ export default function Home() {
     await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: "http://localhost:3000/auth/callback",
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
       },
     });
+
 
     setInfoMsg("Revisa tu correo para entrar.");
     setLoading(false);
